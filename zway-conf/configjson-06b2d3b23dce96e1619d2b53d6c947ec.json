@@ -1,0 +1,90 @@
+{
+    "controller": {},
+    "vdevInfo": {},
+    "locations": [{
+        "id": 0,
+        "title": "globalRoom",
+        "user_img": "",
+        "default_img": "",
+        "img_type": ""
+    }],
+    "profiles": [{
+        "id": 1,
+        "role": 1,
+        "login": "admin",
+        "password": "admin",
+        "name": "Administrator",
+        "lang": "en",
+        "color": "#dddddd",
+        "dashboard": [],
+        "interval": 2000,
+        "rooms": [0],
+        "expert_view": true,
+        "hide_all_device_events": false,
+        "hide_system_events": false,
+        "hide_single_device_events": [],
+        "skin": "default"
+    }],
+    "instances": [{
+        "id": 1,
+        "moduleId": "ZWave",
+        "params": {
+            "name": "zway",
+            "port": "/dev/ttyAMA0",
+            "enableAPI": true,
+            "publicAPI": false,
+            "createVDev": true,
+            "config": "config",
+            "translations": "translations",
+            "ZDDX": "ZDDX"
+        },
+        "active": true,
+        "title": "Z-Wave Network Access",
+        "description": "Allows accessing Z-Wave devices from attached Z-Wave transceiver.\n(Added by default)"
+    }, {
+        "id": 2,
+        "moduleId": "Cron",
+        "params": {},
+        "active": true,
+        "title": "System Clock (CRON)",
+        "description": "Scheduler used by other modules\n(Added by default)"
+    }, {
+        "id": 3,
+        "moduleId": "InbandNotifications",
+        "params": {},
+        "active": true,
+        "title": "Inband Notifier",
+        "description": "Creates and records the presentation of events in the event list (Eventlog).\n(Added by default)"
+    }, {
+        "id": 4,
+        "moduleId": "BatteryPolling",
+        "active": true,
+        "title": "Battery Polling",
+        "description": "Set up an interval that regularly polls the battery status of a battery devices.\n(Added by default)",
+        "params": {
+            "launchWeekDay": 0,
+            "warningLevel": "20"
+        }
+    }, {
+        "id": 5,
+        "moduleId": "SwitchControlGenerator",
+        "active": true,
+        "title": "Trap events from Remotes and Sensors",
+        "description": "",
+        "params": {
+            "trapNew": true,
+            "banned": [],
+            "generated": []
+        }
+    }, {
+        "id": 6,
+        "moduleId": "EventForwarder",
+        "active": true,
+        "title": "Forward events to the server",
+        "description": "",
+        "params": {
+            "submit_hosts": ["http://localhost"],
+            "submit_uri": "/api/v1/devices/events"
+        }
+    }]
+}

@@ -1,0 +1,42 @@
+{
+  "dependencies": [],
+  "singleton": true,
+  "category": "environment",
+  "defaults" : {
+    "title" : "EventForwarder",
+    "description" : "Event forwarder to integrate events with other home automation software",
+    "submit_hosts": ["http://localhost"],
+    "submit_uri": "/api/v1/devices/events"
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "submit_hosts": {
+        "type": "array",
+        "items": {
+          "type": "text"
+        },
+        "required": true
+      },
+      "submit_uri": {
+        "type": "string",
+        "required": true
+      }
+    }
+  },
+  "options": {
+    "fields": {
+      "submit_hosts": {
+        "label": "hosts",
+        "type" : "array",
+        "items": {
+          "type" : "text"
+        }
+      },
+      "submit_uri": {
+        "label": "uri",
+        "type" : "text"
+      }
+    }
+  }
+}
