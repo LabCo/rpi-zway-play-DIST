@@ -1,0 +1,11 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                     controllers.api.EventsController.home
+
+GET     /api/v1/events        controllers.api.EventsController.all
+POST    /api/v1/events        controllers.api.EventsController.create
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
